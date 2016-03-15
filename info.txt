@@ -1,0 +1,20 @@
+Загрузка кода в виртуальную машину происходит через github.
+Репозиторий должен быть склонирован в директорию /home/box/web на виртуальной машине.
+При решении очередного задания необходимые действия:
+
+git clone https://github.com/Werechess/WebTech.git /home/box/web
+bash /home/box/web/init.sh
+
+//Установка web сервера nginx
+apt-get update
+apt-get install nginx
+
+//Запуск web сервера
+sudo /etc/init.d/nginx start
+
+//Файлы web сервера
+• Конфиг /etc/nginx/nginx.conf include /etc/nginx/sites-enabled/*
+• Init-скрипт /etc/init.d/nginx [start|stop|restart]
+• PID-файл /var/run/nginx.pid
+• Error-лог /var/log/nginx/error.log
+• Access-лог /var/log/nginx/access.log
