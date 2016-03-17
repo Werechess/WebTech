@@ -1,10 +1,12 @@
 CONFIG = {
     'mode': 'wsgi',
-    'working_dir': '/home/box/web/',
+    'working_dir': '/home/box/web',
     'args': (
         '--bind=0.0.0.0:8080',
+        '--access-logfile acc.log',
+        '--error-logfile err.log',
         '--daemon',
-        '--workers=4',
+        '--workers=16',
         '--timeout=60',
         'hello:app',
     ),
