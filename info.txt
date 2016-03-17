@@ -3,6 +3,11 @@
 При решении очередного задания необходимые действия:
 
 git clone https://github.com/Werechess/WebTech.git /home/box/web
+cd /home/box/web
+sudo pip install --upgrade django
+django-admin startproject ask
+cd /home/box/web/ask
+python ./manage.py startapp qa
 bash /home/box/web/init.sh
 
 //Установка web сервера nginx
@@ -18,3 +23,4 @@ sudo /etc/init.d/nginx start
 • PID-файл /var/run/nginx.pid
 • Error-лог /var/log/nginx/error.log
 • Access-лог /var/log/nginx/access.log
+
