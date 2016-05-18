@@ -1,12 +1,12 @@
-from django.conf.urls import url
+from django.conf.urls import patterns, url
+from qa.views import test
 
-from . import views
-
-urlpatterns = [
-    url(r"^$", views.test, name='test'),
-    url(r"^login/$", views.test, name='login'),
-    url(r"^signup/$", views.test, name='signup'),
-    url(r"^ask/$", views.test, name='ask'),
-    url(r"^popular/$", views.test, name='popular'),
-    url(r"^question/(\d+)/$", views.test, name='question'),
-]
+urlpatterns = patterns('qa.views',
+    url(r'^$', test, name='main'),
+    url(r'^login/.*$', test, name='login'),
+    url(r'^signup/.*$', test, name='signup'),
+    url(r'^ask/.*$', test, name='ask'),
+    url(r'^popular/.*$', test, name='popular'),
+    url(r'^new/.*$', test, name='new'),
+    url(r'^question/(?P<id>[0-9]+)/.*$', test, name='question'),
+)
